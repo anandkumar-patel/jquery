@@ -14,16 +14,25 @@
 <script>
   $(document).ready(function(){
 
-    $('#name,#email,#country').focusin(function(){
+    $('#name,#email,#country').focus(function(){
       $(this).css('background-color', 'blue');
     });
 
-    $('#name,#email,#country').focusout(function(){
-      $(this).css('background-color', 'red');
+    $('#name,#email,#country').blur(function(){
+      $(this).css('background-color', '');
     });
 
-    $('#country').change(function(){
-      $(this).css('background-color', 'pink');
+    $("#country").change(function(event) {
+      var a = $(this).val();
+      $('#test').html(a);
+    });
+
+    $('#name,#email').select(function(){
+      $(this).css('background-color', 'yellow');
+    });
+
+    $('#form').submit(function(event) {
+      console.log("form submitted successfully....");
     });
 
   });
@@ -31,12 +40,12 @@
 </head>
 <body>
   <h1>Jquery form events.....</h1>
-  <form action="" id="sform">
-    <label for="">Name</label> <input type="email" id="name"> <br><br>
+  <form action="" id="form">
+    <label for="">Name</label> <input type="text" id="name"> <br><br>
 
-    <label for="">Name</label> <input type="email" id="email"> <br><br>
+    <label for="">Email</label> <input type="email" id="email"> <br><br>
 
-    <label for="">Name</label> 
+    <label for="">Country</label> 
     <select id="country">
       <option value="india">India</option>
       <option value="paki">Pakistan</option>
@@ -50,5 +59,6 @@
     
   </form>
 
+  <div id='test' style="border: 1px solid red; margin-top: 20px;"></div>
 </body>
 </html>

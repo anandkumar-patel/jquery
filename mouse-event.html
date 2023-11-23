@@ -1,51 +1,70 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>jquery learning...</title>
-<style>
-  body {font-family: arial}
-  #box{
-    background: pink;
-    padding: 10px;
-    border: 1px solid #000;
-  }
-</style>
-<script src="lib/jquery.min.js"></script>
-<script>
-  $(document).ready(function(){
+  <title>jquery learning...</title>
+  <style>
+    body {font-family: arial}
+    #box{
+      background: pink;
+      padding: 10px;
+      border: 1px solid #000;
+    }
+  </style>
+  <script src="lib/jquery.min.js"></script>
+  <script>
+    $(document).ready(function(){
     /* flavor-1 */
-    $('#box').click(function() {
-      $('#box').css('background-color', 'blue');
-    });
+      $('#box').click(function() {
+        $('#box').css('background-color', 'blue');
+      });
 
-    $('#box').dblclick(function(){
-      $('#box').css('background-color', 'yellow');
-    });
+      $('#box').dblclick(function(){
+        $('#box').css('background-color', 'yellow');
+      });
 
 
-    $('#box').contextmenu(function() {
-      $('#box').css('background-color', 'purple');
-    });
+      $('#box').contextmenu(function() {
+        $('#box').css('background-color', 'purple');
+      });
+
+      $("p").mousedown(function(){
+        alert("Mouse button pressed over paragraph!");
+      });
+
+      $("p").mouseup(function(){
+        alert("Mouse button released over paragraph!");
+      });
+
+      $("p").mousemove(function(){
+        console.log("Mouse moving over paragraph!");
+      });
+      
+      $('p').hover(function(){
+        console.log("Mouse entered paragraph!");
+      },
+      function(){
+        console.log("Mouse left paragraph!");
+      });
 
     /* flavor-2 */
 
-    $('#box').on('mouseenter', function() {
-      $('#box').css('background-color', 'red');
-    });
+      $('#box').on('mouseenter', function() {
+        $('#box').css('background-color', 'red');
+      });
 
-    $('#box').on('mouseleave', function() {
-      $('#box').css('background-color', 'green');
-    });
+      $('#box').on('mouseleave', function() {
+        $('#box').css('background-color', 'green');
+      });
 
-  });
-</script>
+    });
+  </script>
 </head>
 <body>
   <h1>Jquery mouse events.....</h1>
   <div id ='box' class="test">
     <h2> Test box</h2>
     <p> This paragraph will help to understand to mouse click event
-      and here we will demostrate the all events</p>
+    and here we will demostrate the all events</p>
   </div>
 
 </body>

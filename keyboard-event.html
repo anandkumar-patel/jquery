@@ -13,18 +13,20 @@
 <script src="lib/jquery.min.js"></script>
 <script>
   $(document).ready(function(){
-    /* flavor-1 */
-    $('body').keyup(function() {
-      $('#box').css('background-color', 'blue');
-    });
 
-    $('body').keydown(function(){
+    $('body').keydown(function(e){
       $('#box').css('background-color', 'yellow');
+      alert("Key pressed! Key code: " + e.keyCode);
     });
 
+    $('body').keyup(function(e) {
+      $('#box').css('background-color', 'blue');
+       alert("Key released! Key code: " + e.keyCode);
+    });
 
-    $('body').keypress(function() {
+    $('body').keypress(function(e) {
       $('#box').css('background-color', 'red');
+      alert("Character pressed! Character code: " + e.which);
     });
 
   });
