@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>jquery learning...</title>
+<style>
+  body {font-family: arial}
+  #box{
+    background: pink;
+    padding: 10px;
+    border: 1px solid #000;
+  }
+</style>
+<script src="lib/jquery.min.js"></script>
+<script>
+  $(document).ready(function(){
+    /* flavor-1 */
+    $('body').keyup(function() {
+      $('#box').css('background-color', 'blue');
+    });
+
+    $('body').keydown(function(){
+      $('#box').css('background-color', 'yellow');
+    });
+
+
+    $('body').keypress(function() {
+      $('#box').css('background-color', 'red');
+    });
+
+  });
+</script>
+</head>
+<body>
+  <h1>Jquery keyboard events.....</h1>
+  <div id ='box' class="test">
+    <h2> Test box</h2>
+    <p> This paragraph will help to understand to mouse click event
+      and here we will demostrate the all events</p>
+  </div>
+
+</body>
+</html>

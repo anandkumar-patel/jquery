@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>jquery learning...</title>
+<style>
+  body {font-family: arial}
+  #box{
+    background: pink;
+    padding: 10px;
+    border: 1px solid #000;
+  }
+</style>
+<script src="lib/jquery.min.js"></script>
+<script>
+  $(document).ready(function(){
+
+    $('#name,#email,#country').focusin(function(){
+      $(this).css('background-color', 'blue');
+    });
+
+    $('#name,#email,#country').focusout(function(){
+      $(this).css('background-color', 'red');
+    });
+
+    $('#country').change(function(){
+      $(this).css('background-color', 'pink');
+    });
+
+  });
+</script>
+</head>
+<body>
+  <h1>Jquery form events.....</h1>
+  <form action="" id="sform">
+    <label for="">Name</label> <input type="email" id="name"> <br><br>
+
+    <label for="">Name</label> <input type="email" id="email"> <br><br>
+
+    <label for="">Name</label> 
+    <select id="country">
+      <option value="india">India</option>
+      <option value="paki">Pakistan</option>
+      <option value="bhutan">Bhutan</option>
+      <option value="nepal">Nepal</option>
+      <option value="bangaldesh">Bangladesh</option>
+      <option value="shrilanka">Shri Lanka</option>
+    </select>
+    <br><br>
+    <input type="submit" name="submit">
+    
+  </form>
+
+</body>
+</html>
