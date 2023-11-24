@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>jQuery Learning...</title>
+  <style>
+    body {font-family: arial}
+    #box{
+      padding: 10px;
+      border: 1px solid #000;
+      background: pink;
+    }
+    .first{background: blue !important;}
+    .second{background: darkcyan !important;}
+  </style>
+  <script src="lib/jquery.min.js"></script>
+  <script>
+    $(document).ready(function(){
+
+      $('#addbutton').click(function(){
+        $('#box, h1').addClass('first');
+      });
+
+      $('#removebutton').click(function(){
+        $('#box').removeClass('first');
+      });
+
+      $('#togglebutton').click(function(){
+        $('#box').toggleClass('second');
+      });
+    });
+  </script>
+</head>
+<body>
+  <h1>jQuery css Class Methods...</h1>
+  <div id ='box'>
+    <h2>Please Read this and understand</h2>
+    <p> It seems there is a specificity conflict between the styles defined in the #box selector and the .first class. The styles defined in the #box selector take precedence over the .first class.</p>
+
+<p>To ensure that the background color of #box changes when the "Add Class" button is clicked, you can use the <b>!important</b> declaration in your CSS for the .first class.</p>
+  </div>
+  <br>
+  <button id='addbutton'>Add Class</button>
+  <button id='removebutton'>Remove Class</button>
+  <button id='togglebutton'>Toggle Class</button>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>jquery learning...</title>
+  <style>
+    body {font-family: arial}
+    #box,#result{
+      background: pink;
+      padding: 10px;
+      border: 1px solid #000;
+    }
+    #result{
+      background-color: yellowgreen;
+    }
+  </style>
+  <script src="lib/jquery.min.js"></script>
+  <script>
+    $(document).ready(function(){
+
+      var text = $('#box').text();
+      $('#text').click(function(){
+        $('#result').text(text);
+      });
+
+      var ht = $('#box').html();
+      $('#html').click(function(){
+        $('#result').html(ht);
+      });
+
+      $('#val').click(function(){
+        var selected = $('#methods').val();
+        $('#result').html(selected);
+      });
+
+      $('#attr').click(function(){
+        var attribute = $('#box').attr('id');
+        $('#result').attr('name',attribute);
+        $('#result').html('attribute set:  name as '+attribute);
+      });
+
+    });
+  </script>
+</head>
+<body>
+  <h1>Jquery get/set methods.....</h1>
+  <div id ='box' class="test abc" name='demo-name'>
+    <h2>Get/Set Content methods - text(), html(), and val()</h2>
+    <p> Three simple, but useful, jQuery methods for DOM manipulation are:<br>
+
+      <b>text()</b> - Sets or returns the text content of selected elements <br>
+      <b>html()</b> - Sets or returns the content of selected elements (including HTML markup)<br>
+      <b>val()</b> - Sets or returns the value of form fields<br>
+</p>
+
+<h2>Get/Set Attributes method - attr()</h2>
+  <p>The jQuery attr() method is used to get attribute values.</p>
+   <label for="">Methods</label> 
+<select id="methods">
+  <option value="text">text()</option>
+  <option value="html">html()</option>
+  <option value="val">val()</option>
+  <option value="attr">attr()</option>
+</select>
+<br><br>
+  </div>
+<button id = 'text'>text()</button> &nbsp;&nbsp;
+<button id = 'html'>html()</button> &nbsp;&nbsp;
+<button id = 'val'>val()</button> &nbsp;&nbsp;
+<button id = 'attr'>attr()</button>
+
+  <div id ='result'>
+  </div>
+
+</body>
+</html>
+
